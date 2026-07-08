@@ -98,6 +98,8 @@ def call(Map pipelineParams) {
             export GIT_USER=${gitUser}
         fi
         export STATUS=${status} MERGE_OPTIONS="${mergeOptions}"
+        echo "DEBUG PUSH_BRANCH=$PUSH_BRANCH"
+        env | grep PUSH
         bash build/${buildInfraPath}/recursive-merge
     """
 
